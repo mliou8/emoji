@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+		<head>
+				<title>Socket.IO chat</title>
+				<link href="/public/styles/stylesheet.css" type="text/css" rel="stylesheet" />
+				<script src="/socket.io/socket.io.js"></script>
+				<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+				<script src="/node_modules/angular/angular.js"></script>
+				<script src="/node_modules/angular-event-emitter/angular-event-emitter.js"></script>
+				<script src="/browser/js/module.js"></script>
+				<script src="/browser/js/controllers/chatCtrl.js"></script>
+				<script src="/browser/js/factories/chatFactory.js"></script>
+		</head>
+		<body>
+				<div ng-app='chat'>
+						<div ng-controller='ChatCtrl'>
+								<p>this is here for easy inspection
+								<ul id="messages" ng-repeat='message in messageArr'>
+										<li> {{message}} </li>
+								</ul>
+								</p>
+								<form ng-submit="sendMessage(textEntry)">
+										<input id="m" autocomplete="off" / ng-model='textEntry'>
+										<input type='submit'>
+								</form>
+						</div>
+				</div>
+
+		</body>
+</html>
